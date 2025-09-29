@@ -3,11 +3,9 @@ package server
 import (
 	"context"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/alexliesenfeld/health"
-	"github.com/cloudflare/cloudflare-go"
 )
 
 // @Title HealthHandler
@@ -46,14 +44,6 @@ func (s *Server) HealthHandler() http.HandlerFunc {
 		// 		return fmt.Errorf("this makes the check fail")
 		// 	},
 		// }),
-
-		health.WithCheck(health.Check{
-			Name: "Cloudflare",
-			Check: func(_ context.Context) error {
-				_, err := cloudflare.NewWithAPIToken(os.Getenv("CLOUDFLARE_API_TOKEN"))
-				return err
-			},
-		}),
 
 		health.WithCheck(health.Check{
 			Name: "i-Ma'luum Official Website",
