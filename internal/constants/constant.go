@@ -11,5 +11,6 @@ const (
 	ImaluumHomePage      = "https://imaluum.iium.edu.my/home"
 	ImaluumSchedulePage  = "https://imaluum.iium.edu.my/MyAcademic/schedule"
 	ImaluumResultPage    = "https://imaluum.iium.edu.my/MyAcademic/result"
+	PreregSchedulePage   = "https://albiruni.iium.edu.my/myapps/StudentOnline/schedule1.php"
 	TimeSeparator        = "-"
 )

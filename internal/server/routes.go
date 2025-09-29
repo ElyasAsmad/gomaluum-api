@@ -55,6 +55,8 @@ func (s *Server) RegisterRoutes() http.Handler {
 
 		r.Get("/ads", s.AdsHandler)
 
+		r.Post("/prereg-schedule", s.PreregScheduleHandler)
+
 		// All routes in this group require authentication
 		r.Group(func(r chi.Router) {
 			// Check for PASETO token in Authorization header
